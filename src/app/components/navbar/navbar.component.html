@@ -1,0 +1,19 @@
+<nav>
+    <ul>
+      <li *ngIf="utilitiesService.getUserType() === 'admin'">
+        <a routerLink="/admin-dashboard">Admin Dashboard</a>
+        <ul>
+          <li><a routerLink="/admin-dashboard/add-train">Add Train</a></li>
+          <li><a routerLink="/admin-dashboard/add-routes">Add Routes</a></li>
+          <li><a routerLink="/admin-dashboard/get-users">Get Users</a></li>
+        </ul>
+      </li>
+      <li *ngIf="utilitiesService.getUserType() === 'user'">
+        <a routerLink="/user-dashboard">User Dashboard</a>
+        <ul>
+          <li><a routerLink="/user-dashboard/search">Search</a></li>
+          <li><a routerLink="/user-dashboard/book">Book</a></li>
+        </ul>
+      </li>
+    </ul>
+  </nav>

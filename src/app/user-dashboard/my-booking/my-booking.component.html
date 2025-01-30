@@ -1,0 +1,15 @@
+<app-user-navbar></app-user-navbar>
+<div class="card mb-4">
+    <div class="card-body">
+      <h5 class="card-title">Get All Bookings</h5>
+      <button class="btn btn-primary" (click)="getAllBookings()">Get All Bookings</button>
+    </div>
+    <div class="card-body">
+      <h3>Bookings</h3>
+      <ul class="list-group">
+        <li *ngFor="let booking of bookings" class="list-group-item">
+          {{ booking }}
+        </li>
+      </ul>
+    </div>
+  </div>

@@ -16,6 +16,10 @@ import { BookingComponent } from './user-dashboard/booking/booking.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { UnauthorizedComponent } from './components/unauthorized/unauthorized.component';
 import { AddStationComponent } from './admin-dashboard/add-station/add-station.component';
+import { SearchComponent } from './user-dashboard/search/search.component';
+import { UserNavbarComponent } from './components/user-navbar/user-navbar.component';
+import { MyBookingComponent } from './user-dashboard/my-booking/my-booking.component';
+import { CancelTicketComponent } from './user-dashboard/cancel-ticket/cancel-ticket.component';
 
 @NgModule({
   declarations: [
@@ -31,6 +35,10 @@ import { AddStationComponent } from './admin-dashboard/add-station/add-station.c
     NavbarComponent,
     UnauthorizedComponent,
     AddStationComponent,
+    SearchComponent,
+    UserNavbarComponent,
+    MyBookingComponent,
+    CancelTicketComponent
   ],
   imports: [
     BrowserModule,

@@ -1,1 +1,46 @@
-<p>booking works!</p>
+<app-user-navbar></app-user-navbar>
+<div class="container mt-4">
+    <div class="row">
+      <div class="col-12">
+        <h2>Booking Management</h2>
+      </div>
+    </div>
+    <div class="row">
+      <!-- Card for Getting All Bookings -->
+      <div class="col-md-6">
+        <div class="card mb-4">
+          <div class="card-body">
+            <h5 class="card-title">Get All Bookings</h5>
+            <div class="mb-3">
+              <label for="userId" class="form-label">User ID</label>
+              <input type="text" id="userId" class="form-control" [(ngModel)]="data.userId" placeholder="Enter User ID">
+            </div>
+            <button class="btn btn-primary" (click)="getAllBookings()">Get All Bookings</button>
+          </div>
+        </div>
+      </div>
+      <!-- Card for Canceling a Booking -->
+      <div class="col-md-6">
+        <div class="card mb-4">
+          <div class="card-body">
+            <h5 class="card-title">Cancel Booking</h5>
+            <div class="mb-3">
+              <label for="bookingId" class="form-label">Booking ID</label>
+              <input type="text" id="bookingId" class="form-control" [(ngModel)]="data.bookingId" placeholder="Enter Booking ID">
+            </div>
+            <button class="btn btn-danger" (click)="cancelTicket()">Cancel Booking</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row mt-4">
+      <div class="col-12">
+        <h3>Bookings</h3>
+        <ul class="list-group">
+          <li *ngFor="let booking of bookings" class="list-group-item">
+            {{ booking }}
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>

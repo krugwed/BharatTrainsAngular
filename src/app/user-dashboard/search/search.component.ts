@@ -1,55 +1,42 @@
-import { Component } from "@angular/core";
-
-interface SearchResponse {
-  trainId: string;
-  trainName: string;
-  source: string;
-  destination: string;
-  path: string[];
-  arrivalTime: string;
-  departureTime: string;
-  journeyDate: Date;
-}
+import { Component } from '@angular/core';
+import { Router } from '@angular/router';
+import { ApiService } from 'src/app/services/api.service';
+import { UtlitiesService } from 'src/app/services/utlities.service';
 
 @Component({
-  selector: 'app-train-search',
+  selector: 'app-search',
   templateUrl: './search.component.html',
-  styleUrls: ['./search.component.css']
+  styleUrls: ['./search.component.scss']
 })
-export class TrainSearchComponent {
-  fromStationId: string = '';
-  toStationId: string = '';
-  dateOfTravel: string = '';
-  stationList = [
-    { stationID: 'STA', stationName: 'Station A' },
-    { stationID: 'STB', stationName: 'Station B' },
-    // Add more stations as needed
-  ];
-  searchResults: SearchResponse[] = [];
+export class SearchComponent {
+  data: any=[];
+stationList: any;
+searchResults: any;
+  
+  
 
-  searchTrains() {
-    // Mock search response
-    this.searchResults = [
-      {
-        trainId: '12345',
-        trainName: 'Express Train',
-        source: 'Station A',
-        destination: 'Station B',
-        path: ['Station A', 'Station C', 'Station B'],
-        arrivalTime: '10:00 AM',
-        departureTime: '10:30 AM',
-        journeyDate: new Date(this.dateOfTravel)
-      },
-      {
-        trainId: '67890',
-        trainName: 'Superfast Train',
-        source: 'Station A',
-        destination: 'Station D',
-        path: ['Station A', 'Station E', 'Station D'],
-        arrivalTime: '11:00 AM',
-        departureTime: '11:30 AM',
-        journeyDate: new Date(this.dateOfTravel)
-      }
-    ];
+constructor(public api:ApiService,
+            public sec:UtlitiesService,
+            private router: Router
+){
+
+}
+
+ searchTrains(){
+
+  let url="auth/users/login";
+  const payload = {
+
+    "username":this.data.username,
+    "password":this.data.password
   }
+
+  console.log(this.data.username)
+
+  this.api.postData(url,payload).subscribe((res:any)=>{
+
+        
+  });
+ 
+}
 }

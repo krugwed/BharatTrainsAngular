@@ -12,6 +12,8 @@ import { AddTrainsComponent } from './admin-dashboard/add-trains/add-trains.comp
 import { BookingComponent } from './user-dashboard/booking/booking.component';
 import { UnauthorizedComponent } from './components/unauthorized/unauthorized.component';
 import { AddStationComponent } from './admin-dashboard/add-station/add-station.component';
+import { MyBookingComponent } from './user-dashboard/my-booking/my-booking.component';
+import { CancelTicketComponent } from './user-dashboard/cancel-ticket/cancel-ticket.component';
 
 const routes: Routes = [
 
@@ -25,6 +27,8 @@ const routes: Routes = [
   { path: 'admin-dashboard/add-station', component: AddStationComponent, canActivate:[RoleGuard], data:{expectedRole:'ADMIN'}},
   { path: 'user-dashboard', component: UserDashboardComponent, canActivate: [RoleGuard], data: { expectedRole: 'USER' } },
   { path: 'user-dashboard/search', component: SearchComponent, canActivate: [RoleGuard], data: { expectedRole: 'USER' } },
+  { path: 'user-dashboard/my-booking', component: MyBookingComponent, canActivate: [RoleGuard], data: { expectedRole: 'USER' } },
+  { path: 'user-dashboard/cancel', component: CancelTicketComponent, canActivate: [RoleGuard], data: { expectedRole: 'USER' } },
   { path: 'user-dashboard/book', component: BookingComponent, canActivate: [RoleGuard], data: { expectedRole: 'USER' } },
   { path: 'unauthorized', component: UnauthorizedComponent },
 ];

@@ -1,0 +1,11 @@
+<app-user-navbar></app-user-navbar>
+<div class="card mb-4">
+    <div class="card-body">
+      <h5 class="card-title">Cancel Booking</h5>
+      <div class="mb-3">
+        <label for="bookingId" class="form-label">Booking ID</label>
+        <input type="text" id="bookingId" class="form-control" [(ngModel)]="data.bookingId" placeholder="Enter Booking ID">
+      </div>
+      <button class="btn btn-danger" (click)="cancelBooking()">Cancel Booking</button>
+    </div>
+  </div>

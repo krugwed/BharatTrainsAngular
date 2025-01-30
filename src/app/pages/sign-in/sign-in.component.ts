@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { ApiService } from '../../services/api.service';
 import { UtlitiesService } from '../../services/utlities.service';
+import { Router } from '@angular/router';
 
 
 
@@ -11,11 +12,12 @@ import { UtlitiesService } from '../../services/utlities.service';
 })
 export class SignInComponent {
 data: any=[];
-  router: any;
+  
   
 
 constructor(public api:ApiService,
-            public sec:UtlitiesService
+            public sec:UtlitiesService,
+            private router: Router
 ){
 
 }
@@ -37,9 +39,11 @@ constructor(public api:ApiService,
         this.sec.userType=res.role;
 
         // Redirect based on user role
-      if (res.role === 'admin') {
+      if (res.role === 'ADMIN') {
+        console.log('in admin dashboard')
         this.router.navigate(['/admin-dashboard']);
-      } else if (res.role === 'user') {
+      } else if (res.role === 'USER') {
+        console.log('in user dashboard ')
         this.router.navigate(['/user-dashboard']);
       }
 

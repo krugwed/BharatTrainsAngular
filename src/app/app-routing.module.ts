@@ -10,20 +10,23 @@ import { SearchComponent } from './user-dashboard/search/search.component';
 import { UserDashboardComponent } from './user-dashboard/user-dashboard/user-dashboard.component';
 import { AddTrainsComponent } from './admin-dashboard/add-trains/add-trains.component';
 import { BookingComponent } from './user-dashboard/booking/booking.component';
+import { UnauthorizedComponent } from './components/unauthorized/unauthorized.component';
+import { AddStationComponent } from './admin-dashboard/add-station/add-station.component';
 
 const routes: Routes = [
 
   { path: '', redirectTo: 'signin', pathMatch: 'full' },
   { path: 'signin', component: SignInComponent },
   { path: 'signup', component: RegisterComponent },
-  { path: 'admin-dashboard', component: AdminDashboardComponent, canActivate: [RoleGuard], data: { expectedRole: 'admin' } },
-  { path: 'admin-dashboard/add-train', component: AddTrainsComponent, canActivate: [RoleGuard], data: { expectedRole: 'admin' } },
-  { path: 'admin-dashboard/add-routes', component: AddRoutesComponent, canActivate: [RoleGuard], data: { expectedRole: 'admin' } },
-  { path: 'admin-dashboard/get-users', component: GetUsersComponent, canActivate: [RoleGuard], data: { expectedRole: 'admin' } },
-  { path: 'user-dashboard', component: UserDashboardComponent, canActivate: [RoleGuard], data: { expectedRole: 'user' } },
-  { path: 'user-dashboard/search', component: SearchComponent, canActivate: [RoleGuard], data: { expectedRole: 'user' } },
-  { path: 'user-dashboard/book', component: BookingComponent, canActivate: [RoleGuard], data: { expectedRole: 'user' } },
-  
+  { path: 'admin-dashboard', component: AdminDashboardComponent, canActivate: [RoleGuard], data: { expectedRole: 'ADMIN' } },
+  { path: 'admin-dashboard/add-trains', component: AddTrainsComponent, canActivate: [RoleGuard], data: { expectedRole: 'ADMIN' } },
+  { path: 'admin-dashboard/add-routes', component: AddRoutesComponent, canActivate: [RoleGuard], data: { expectedRole: 'ADMIN' } },
+  { path: 'admin-dashboard/get-users', component: GetUsersComponent, canActivate: [RoleGuard], data: { expectedRole: 'ADMIN' } },
+  { path: 'admin-dashboard/add-station', component: AddStationComponent, canActivate:[RoleGuard], data:{expectedRole:'ADMIN'}},
+  { path: 'user-dashboard', component: UserDashboardComponent, canActivate: [RoleGuard], data: { expectedRole: 'USER' } },
+  { path: 'user-dashboard/search', component: SearchComponent, canActivate: [RoleGuard], data: { expectedRole: 'USER' } },
+  { path: 'user-dashboard/book', component: BookingComponent, canActivate: [RoleGuard], data: { expectedRole: 'USER' } },
+  { path: 'unauthorized', component: UnauthorizedComponent },
 ];
 
 @NgModule({

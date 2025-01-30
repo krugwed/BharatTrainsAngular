@@ -12,10 +12,10 @@ import { AddRoutesComponent } from './admin-dashboard/add-routes/add-routes.comp
 import { AddTrainsComponent } from './admin-dashboard/add-trains/add-trains.component';
 import { GetUsersComponent } from './admin-dashboard/get-users/get-users.component';
 import { UserDashboardComponent } from './user-dashboard/user-dashboard/user-dashboard.component';
-import { SearchComponent } from './user-dashboard/search/search.component';
 import { BookingComponent } from './user-dashboard/booking/booking.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
-
+import { UnauthorizedComponent } from './components/unauthorized/unauthorized.component';
+import { AddStationComponent } from './admin-dashboard/add-station/add-station.component';
 
 @NgModule({
   declarations: [
@@ -27,9 +27,10 @@ import { NavbarComponent } from './components/navbar/navbar.component';
     AddTrainsComponent,
     GetUsersComponent,
     UserDashboardComponent,
-    SearchComponent,
     BookingComponent,
-    NavbarComponent
+    NavbarComponent,
+    UnauthorizedComponent,
+    AddStationComponent,
   ],
   imports: [
     BrowserModule,

@@ -20,6 +20,14 @@ import { SearchComponent } from './user-dashboard/search/search.component';
 import { UserNavbarComponent } from './components/user-navbar/user-navbar.component';
 import { MyBookingComponent } from './user-dashboard/my-booking/my-booking.component';
 import { CancelTicketComponent } from './user-dashboard/cancel-ticket/cancel-ticket.component';
+import { ApiService } from './services/api.service';
+import { UtlitiesService } from './services/utlities.service';
+import { UserProfileComponent } from './user-dashboard/user-profile/user-profile.component';
+import { LogoutComponent } from './components/logout/logout.component';
+import { AdminProfileComponent } from './admin-dashboard/admin-profile/admin-profile.component';
+import { ChangePasswordComponent } from './components/change-password/change-password.component';
+import { DeleteUserComponent } from './components/delete-user/delete-user.component';
+
 
 @NgModule({
   declarations: [
@@ -38,14 +46,19 @@ import { CancelTicketComponent } from './user-dashboard/cancel-ticket/cancel-tic
     SearchComponent,
     UserNavbarComponent,
     MyBookingComponent,
-    CancelTicketComponent
+    CancelTicketComponent,
+    UserProfileComponent,
+    LogoutComponent,
+    AdminProfileComponent,
+    ChangePasswordComponent,
+    DeleteUserComponent,
+    UserProfileComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    HttpClientModule
-
+    HttpClientModule,
   ],
   providers: [
     {
@@ -53,6 +66,8 @@ import { CancelTicketComponent } from './user-dashboard/cancel-ticket/cancel-tic
       useClass: HeaderInterceptor,
       multi: true,
     },
+    ApiService,
+    UtlitiesService
   ],
   bootstrap: [AppComponent]
 })

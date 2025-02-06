@@ -1,15 +1,21 @@
 <app-user-navbar></app-user-navbar>
 <div class="card mb-4">
-    <div class="card-body">
-      <h5 class="card-title">Get All Bookings</h5>
-      <button class="btn btn-primary" (click)="getAllBookings()">Get All Bookings</button>
-    </div>
-    <div class="card-body">
-      <h3>Bookings</h3>
-      <ul class="list-group">
-        <li *ngFor="let booking of bookings" class="list-group-item">
-          {{ booking }}
-        </li>
-      </ul>
-    </div>
+  <div class="card-body text-center">
+    <h5 class="card-title">My Bookings</h5>
   </div>
+  <div class="card-body">
+    <h3>Bookings</h3>
+    <ul class="list-group">
+      <li *ngFor="let booking of bookings" class="list-group-item">
+        <div><strong>Booking ID:</strong> {{ booking.bookingId }}</div>
+        <div><strong>Train Name:</strong> {{ booking.trainName }}</div>
+        <div><strong>Source:</strong> {{ booking.source }}</div>
+        <div><strong>Destination:</strong> {{ booking.destination }}</div>
+        <div><strong>Seat ID:</strong> {{ booking.seatId }}</div>
+        <div><strong>Booking Status:</strong> {{ booking.bookingStatus }}</div>
+        <div><strong>Journey Date:</strong> {{ booking.journeyDate | date }}</div>
+        <div><strong>Booking Date:</strong> {{ booking.bookingDate | date }}</div>
+      </li>
+    </ul>
+  </div>
+</div>

@@ -1,35 +1,39 @@
 <app-navbar></app-navbar>
 <div class="container mt-5">
-  <div class="card">
-    <div class="card-header">
-      <h3>Add Stations</h3>
-    </div>
-    <div class="card-body">
-      <form (ngSubmit)="onSubmit()">
-        <div *ngFor="let station of stations; let i = index" class="mb-3">
-          <h5>Station {{ i + 1 }}</h5>
-          <div class="form-group">
-            <label for="trainId-{{i}}">Train ID</label>
-            <input type="text" class="form-control" id="trainId-{{i}}" name="trainId-{{i}}" [(ngModel)]="station.trainId" required>
-          </div>
-          <div class="form-group">
-            <label for="station-{{i}}">Station</label>
-            <input type="text" class="form-control" id="station-{{i}}" name="station-{{i}}" [(ngModel)]="station.station" required>
-          </div>
-          <div class="form-group">
-            <label for="journeyDate-{{i}}">Journey Date</label>
-            <input type="date" class="form-control" id="journeyDate-{{i}}" name="journeyDate-{{i}}" [(ngModel)]="station.journeyDate" required>
-          </div>
-          <div class="form-group">
-            <label for="seats-{{i}}">Seats</label>
-            <input type="text" class="form-control" id="seats-{{i}}" name="seats-{{i}}" [(ngModel)]="station.seats" required>
-          </div>
-          <button type="button" class="btn btn-danger mt-2" (click)="removeStation(i)">Remove Station</button>
-          <hr>
+  <div class="row justify-content-center">
+    <div class="col-md-8">
+      <div class="card">
+        <div class="card-header">
+          <h3>Add Stations</h3>
         </div>
-        <button type="button" class="btn btn-secondary mt-3" (click)="addStation()">Add Another Station</button>
-        <button type="submit" class="btn btn-primary mt-3">Submit</button>
-      </form>
+        <div class="card-body">
+          <form (ngSubmit)="submit()">
+            <div *ngFor="let station of stations; let i = index" class="mb-3">
+              <h5>Station {{ i + 1 }}</h5>
+              <div class="form-group">
+                <label for="trainId-{{i}}">Train ID</label>
+                <input type="text" class="form-control" id="trainId-{{i}}" name="trainId-{{i}}" [(ngModel)]="station.trainId" required>
+              </div>
+              <div class="form-group">
+                <label for="station-{{i}}">Station</label>
+                <input type="text" class="form-control" id="station-{{i}}" name="station-{{i}}" [(ngModel)]="station.station" required>
+              </div>
+              <div class="form-group">
+                <label for="journeyDate-{{i}}">Journey Date</label>
+                <input type="date" class="form-control" id="journeyDate-{{i}}" name="journeyDate-{{i}}" [(ngModel)]="station.journeyDate" required>
+              </div>
+              <div class="form-group">
+                <label for="seats-{{i}}">Seats</label>
+                <input type="text" class="form-control" id="seats-{{i}}" name="seats-{{i}}" [(ngModel)]="station.seatsString" required>
+              </div>
+              <button type="button" class="btn btn-danger mt-2" (click)="removeStation(i)">Remove Station</button>
+              <hr>
+            </div>
+            <button type="button" class="btn btn-secondary mt-3" (click)="addStation()">Add Another Station</button>
+            <button type="submit" class="btn btn-primary mt-3">Submit</button>
+          </form>
+        </div>
+      </div>
     </div>
   </div>
 </div>

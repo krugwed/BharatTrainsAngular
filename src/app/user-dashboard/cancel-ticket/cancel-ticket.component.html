@@ -1,6 +1,7 @@
 <app-user-navbar></app-user-navbar>
-<div class="card mb-4">
-    <div class="card-body">
+<div class="d-flex justify-content-center">
+  <div class="card mb-4" style="width: 50%;">
+    <div class="card-body text-center">
       <h5 class="card-title">Cancel Booking</h5>
       <div class="mb-3">
         <label for="bookingId" class="form-label">Booking ID</label>
@@ -9,3 +10,7 @@
       <button class="btn btn-danger" (click)="cancelBooking()">Cancel Booking</button>
     </div>
   </div>
+</div>
+<div *ngIf="cancelResponse" class="alert text-center" [ngClass]="{'alert-success': cancelResponse.cancelStatus, 'alert-danger': !cancelResponse.cancelStatus}">
+  {{ cancelResponse.message }}
+</div>

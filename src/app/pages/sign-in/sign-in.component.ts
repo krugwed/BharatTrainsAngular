@@ -37,6 +37,7 @@ constructor(public api:ApiService,
 
         this.sec.jwtToken=res.jwt;
         this.sec.userType=res.role;
+        this.sec.setUserId(res.userId);
 
         // Redirect based on user role
       if (res.role === 'ADMIN') {

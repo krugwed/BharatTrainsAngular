@@ -1,0 +1,20 @@
+<div class="container mt-5">
+    <div class="card shadow-sm">
+      <div class="card-header bg-dark text-white">
+        <h4 class="mb-0">Delete User</h4>
+      </div>
+      <div class="card-body">
+        <div *ngIf="success" class="alert alert-success alert-dismissible fade show" role="alert">
+          <span>{{ success }}</span>
+          <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+        <div *ngIf="error" class="alert alert-danger alert-dismissible fade show" role="alert">
+          <span>{{ error }}</span>
+          <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+  
+        <p>Are you sure you want to delete your account?</p>
+        <button class="btn btn-danger" (click)="deleteUser()">Delete User</button>
+      </div>
+    </div>
+  </div>

@@ -14,6 +14,10 @@ import { UnauthorizedComponent } from './components/unauthorized/unauthorized.co
 import { AddStationComponent } from './admin-dashboard/add-station/add-station.component';
 import { MyBookingComponent } from './user-dashboard/my-booking/my-booking.component';
 import { CancelTicketComponent } from './user-dashboard/cancel-ticket/cancel-ticket.component';
+import { UserProfileComponent } from './user-dashboard/user-profile/user-profile.component';
+import { AdminProfileComponent } from './admin-dashboard/admin-profile/admin-profile.component';
+import { DeleteUserComponent } from './components/delete-user/delete-user.component';
+import { ChangePasswordComponent } from './components/change-password/change-password.component';
 
 const routes: Routes = [
 
@@ -25,11 +29,17 @@ const routes: Routes = [
   { path: 'admin-dashboard/add-routes', component: AddRoutesComponent, canActivate: [RoleGuard], data: { expectedRole: 'ADMIN' } },
   { path: 'admin-dashboard/get-users', component: GetUsersComponent, canActivate: [RoleGuard], data: { expectedRole: 'ADMIN' } },
   { path: 'admin-dashboard/add-station', component: AddStationComponent, canActivate:[RoleGuard], data:{expectedRole:'ADMIN'}},
+  { path: 'admin-dashboard/my-profile', component: AdminProfileComponent, canActivate:[RoleGuard], data:{expectedRole:'ADMIN'}},
+  { path: 'admin-dashboard/delete-user', component: DeleteUserComponent, canActivate:[RoleGuard], data:{expectedRole:'ADMIN'}},
+  { path: 'admin-dashboard/change-password', component: ChangePasswordComponent, canActivate:[RoleGuard], data:{expectedRole:'ADMIN'}},
   { path: 'user-dashboard', component: UserDashboardComponent, canActivate: [RoleGuard], data: { expectedRole: 'USER' } },
   { path: 'user-dashboard/search', component: SearchComponent, canActivate: [RoleGuard], data: { expectedRole: 'USER' } },
   { path: 'user-dashboard/my-booking', component: MyBookingComponent, canActivate: [RoleGuard], data: { expectedRole: 'USER' } },
   { path: 'user-dashboard/cancel', component: CancelTicketComponent, canActivate: [RoleGuard], data: { expectedRole: 'USER' } },
   { path: 'user-dashboard/book', component: BookingComponent, canActivate: [RoleGuard], data: { expectedRole: 'USER' } },
+  { path: 'user-dashboard/my-profile', component: UserProfileComponent, canActivate: [RoleGuard], data: { expectedRole: 'USER' } },
+  { path: 'user-dashboard/delete-user', component: DeleteUserComponent, canActivate:[RoleGuard], data:{expectedRole:'USER'}},
+  { path: 'user-dashboard/change-password', component: ChangePasswordComponent, canActivate:[RoleGuard], data:{expectedRole:'USER'}},
   { path: 'unauthorized', component: UnauthorizedComponent },
 ];
 

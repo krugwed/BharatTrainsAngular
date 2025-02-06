@@ -29,7 +29,8 @@ export class HeaderInterceptor implements HttpInterceptor {
     const modifiedReq = req.clone({
       setHeaders: {
         'Content-Type': 'application/json',
-        ...(token && { 'Authorization': `Bearer ${token}` })
+        // 'access-control-allow-origin':'http://localhost:4200',
+        ...(token && { 'Authorization': 'Bearer ' + token })
       },
     });
 

@@ -27,7 +27,6 @@ constructor(public api:ApiService,
     "seatCount":this.data.seatCount
   }
 
-  console.log(this.data.username)
 
   this.api.postData(url,payload).subscribe({
     

@@ -14,13 +14,18 @@
         <li class="nav-item">
           <a class="nav-link mx-2" routerLink="/admin-dashboard/add-trains"><i class="fas fa-plus-circle pe-2"></i>Add Trains</a>
         </li>
+        <li class="nav-item ">
+          <a class="nav-link mx-2" routerLink="/admin-dashboard/add-station"><i class="fas fa-plus-circle pe-2"></i>Add Station</a>
+        </li>
         <li class="nav-item">
           <a class="nav-link mx-2" routerLink="/admin-dashboard/get-users"><i class="fas fa-bell pe-2"></i>Get Users</a>
         </li>
-        <li class="nav-item ms-3">
-          <a class="btn btn-dark btn-rounded" routerLink="/admin-dashboard/add-station">Add Station</a>
+        <li class="nav-item">
+          <a class="nav-link mx-2" routerLink="/admin-dashboard/my-profile"><i class="fas fa-bell pe-2"></i>Profile</a>
         </li>
-
+        <li class="nav-item">
+          <button class="btn btn-danger mx-2" (click)="logout()"><i class="fas fa-sign-out-alt pe-2"></i>Logout</button>
+        </li>
       </ul>
     </div>
   </div>
